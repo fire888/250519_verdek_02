@@ -12,6 +12,7 @@ export const createInner = (params: IDataBox, t: IDataTopProfile): { v: number[]
         const { count, rotationY } = params.facetInner
         const w = t.esi[0] - t.wsi[0]
         const d = t.wsi[2] - t.wni[2]
+        // @ts-ignore
         if (rotationY === 0 || rotationY === '0') {
             const facetW = FACETS[FacetNames.FACET44].w
 

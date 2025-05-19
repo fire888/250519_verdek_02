@@ -87,6 +87,7 @@ const FACET14: IFacet<FacetNames.FACET14> = (() => {
       Math.sin(startAngle + i * step) * R,
     ])
   }
+  // @ts-ignore
   points.push([points.at(-1)![0], points.at(-1)![1] + 1.5])
 
   return {

@@ -1,10 +1,10 @@
 <template>
   <section class="controls">
-    <fieldset class="border p-3 rounded-lg">
+    <!-- <fieldset class="border p-3 rounded-lg">
       <ControlSelect v-model="scheme.currentBox"
                      label="Номер шкафа"
                      :options="['1','2', '3', '4', '5']"/>                   
-    </fieldset>
+    </fieldset> -->
 
     <fieldset class="border p-3 rounded-lg">
       <legend class="font-semibold mb-2">Размеры коробки</legend>
@@ -74,9 +74,8 @@
 </template>
 
 <script setup lang="ts">
-  import { reactive, watch, computed } from 'vue'
-  import { store } from '../store/store.ts'
-
+  import { reactive, watch } from 'vue'
+  
   import ControlSlider from './ControlSlider.vue'
   import ControlSelect from './ControlSelect.vue'
   import ControlNumber from './ControlNumber.vue'
@@ -89,7 +88,6 @@
   const emit = defineEmits(['update:modelValue'])
 
   const scheme = reactive(JSON.parse(JSON.stringify(props.modelValue)))
-  const params  = props.params
 
   watch(scheme, () => changeParams(scheme))
 </script>

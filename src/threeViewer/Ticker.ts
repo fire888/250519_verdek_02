@@ -1,5 +1,3 @@
-import { rtt } from "three/tsl"
-
 type IFuncToUpdate = (v: number) => void 
 
 export class Ticker {

@@ -1,3 +1,4 @@
+// @ts-ignore
 import { m4 } from './m4'
 
 export type IV3 = [number, number, number]

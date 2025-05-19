@@ -1,5 +1,7 @@
 import * as THREE from 'three'
+// @ts-ignore
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+
 
 export class Studio {
     public containerDom: HTMLElement
