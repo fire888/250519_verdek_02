@@ -6,101 +6,98 @@ const createBoxGeometry = (params: IDataBox) => {
     let vG: number[] = []
 
     const zBox = -300
-    const tBox = 20
-    const updatePoints = () => {
-        const w = params.w
-        const h = params.d
+    const tBox = 30        
+    const w = params.w
+    const h = params.d
 
-        v = []
-        vG = []
+    v = []
+    vG = []
 
-        v.push(
-            // left
-            0, 0, zBox,    // 0
-            0, 0, 0,       // 1
-            0, h, 0,       // 2
-            0, h, zBox,    // 3
+    v.push(
+        // left
+        0, 0, zBox,    // 0
+        0, 0, 0,       // 1
+        0, h, 0,       // 2
+        0, h, zBox,    // 3
 
-            // top
-            0, h, 0,       // 4
-            w, h, 0,       // 5
-            w, h, zBox,    // 6
-            0, h, zBox,    // 7
+        // top
+        0, h, 0,       // 4
+        w, h, 0,       // 5
+        w, h, zBox,    // 6
+        0, h, zBox,    // 7
 
-            //right
-            w, 0, 0,       // 8
-            w, 0, zBox,    // 9
-            w, h, zBox,    // 10
-            w, h, 0,       // 11
+        //right
+        w, 0, 0,       // 8
+        w, 0, zBox,    // 9
+        w, h, zBox,    // 10
+        w, h, 0,       // 11
 
-            //bottom
-            w, 0, 0,       // 12
-            0, 0, 0,       // 13
-            0, 0, zBox,    // 14
-            w, 0, zBox,    // 15
+        //bottom
+        w, 0, 0,       // 12
+        0, 0, 0,       // 13
+        0, 0, zBox,    // 14
+        w, 0, zBox,    // 15
 
-            // back
-            w, 0, zBox,    // 16
-            0, 0, zBox,    // 17
-            0, h, zBox,    // 18
-            w, h, zBox,    // 19
-        )
+        // back
+        w, 0, zBox,    // 16
+        0, 0, zBox,    // 17
+        0, h, zBox,    // 18
+        w, h, zBox,    // 19
+    )
 
-        v.push(
-            /** inner */
-            
-            // bottom
-            tBox, tBox, 0,               // 20
-            w - tBox, tBox, 0,           // 21
-            w - tBox, tBox, zBox + tBox, // 22
-            tBox, tBox, zBox + tBox,     // 23
+    v.push(
+        /** inner */
+        
+        // bottom
+        tBox, tBox, 0,               // 20
+        w - tBox, tBox, 0,           // 21
+        w - tBox, tBox, zBox + tBox, // 22
+        tBox, tBox, zBox + tBox,     // 23
 
-            // left
-            tBox, tBox, 0,               // 24
-            tBox, tBox, zBox + tBox,     // 25
-            tBox, h - tBox, zBox + tBox, // 126
-            tBox, h - tBox, 0,           // 27
+        // left
+        tBox, tBox, 0,               // 24
+        tBox, tBox, zBox + tBox,     // 25
+        tBox, h - tBox, zBox + tBox, // 126
+        tBox, h - tBox, 0,           // 27
 
-            // right
-            w - tBox, tBox, zBox + tBox, // 28
-            w - tBox, tBox, 0,           // 29
-            w - tBox, h - tBox, 0,       // 30
-            w - tBox, h - tBox, zBox + tBox, // 31
+        // right
+        w - tBox, tBox, zBox + tBox, // 28
+        w - tBox, tBox, 0,           // 29
+        w - tBox, h - tBox, 0,       // 30
+        w - tBox, h - tBox, zBox + tBox, // 31
 
-            // back
-            tBox, tBox, zBox + tBox,     // 32
-            w - tBox, tBox, zBox + tBox, // 33
-            w - tBox, h - tBox, zBox + tBox, // 34
-            tBox, h - tBox, zBox + tBox, // 35
+        // back
+        tBox, tBox, zBox + tBox,     // 32
+        w - tBox, tBox, zBox + tBox, // 33
+        w - tBox, h - tBox, zBox + tBox, // 34
+        tBox, h - tBox, zBox + tBox, // 35
 
-            // top
-            w - tBox, h - tBox, 0,       // 36
-            tBox, h - tBox, 0,           // 37
-            tBox, h - tBox, zBox + tBox, // 38
-            w - tBox, h - tBox, zBox + tBox, // 37
-        )
+        // top
+        w - tBox, h - tBox, 0,       // 36
+        tBox, h - tBox, 0,           // 37
+        tBox, h - tBox, zBox + tBox, // 38
+        w - tBox, h - tBox, zBox + tBox, // 37
+    )
 
-        vG.push(
-            0, 0, 0,
-            0, h, 0,
-            w, h, 0,
-            w, 0, 0,
-            0, 0, 0,
+    vG.push(
+        0, 0, 0,
+        0, h, 0,
+        w, h, 0,
+        w, 0, 0,
+        0, 0, 0,
 
-            0, 0, zBox,
-            0, h, zBox,
-            0, h, 0,
-            0, h, zBox,
-            w, h, zBox,
-            w, h, 0,
-            w, h, zBox,
-            w, 0, zBox,
-            w, 0, 0,
-            w, 0, zBox,
-            0, 0, zBox,
-        )
-    }
-    updatePoints()
+        0, 0, zBox,
+        0, h, zBox,
+        0, h, 0,
+        0, h, zBox,
+        w, h, zBox,
+        w, h, 0,
+        w, h, zBox,
+        w, 0, zBox,
+        w, 0, 0,
+        w, 0, zBox,
+        0, 0, zBox,
+    )
 
     const i = []
     const uv = []
@@ -161,6 +158,7 @@ export class ElementSideWalls {
         
         this.mesh = new THREE.Mesh(geometry, material)
         this.mesh.castShadow = true
+        this.mesh.receiveShadow = true
     }
 
     redraw (newData: IDataBox) {

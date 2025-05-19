@@ -1,6 +1,6 @@
 import { 
     FACETS,
-} from '../CONSTANTS/FASETS'
+} from '../../CONSTANTS/FASETS'
 import { rotateArrY, translateArr } from "../helpers/mathHelpers"
 import type { IV3 } from "../helpers/mathHelpers"
 import type { IDataTopProfile } from "./ElementDoor"
@@ -60,8 +60,7 @@ export const createTopPr = (params: IDataBox): IDataTopProfile => {
     }
 
     const n = profileWS.length - 3
-
-
+    
     const wso: IV3 = [profileWS[0], profileWS[1], profileWS[2]]
     const wno: IV3 = [profileWN[0], profileWN[1], profileWN[2]]
     const eso: IV3 = [profileES[0], profileES[1], profileES[2]]

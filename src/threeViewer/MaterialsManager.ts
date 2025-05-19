@@ -26,9 +26,6 @@ export class MaterialsManager {
             assets[ASSETS_KEYS.W_NORMAL_MAP].offset.set(0.5, 0.5)
         }
 
-
-
-
         this.wood = new THREE.MeshPhongMaterial({
             color: 0x333333,
             lightMap: assets[ASSETS_KEYS.W_AO_MAP],
@@ -42,6 +39,7 @@ export class MaterialsManager {
             specular: 0x333333,
             flatShading: true,
         })
+
         this.redMirrorr = new THREE.MeshPhongMaterial({
             color: 0xffffff,
             envMap: assets[ASSETS_KEYS.SKY],
@@ -50,6 +48,7 @@ export class MaterialsManager {
             specular: 0xffffff,
             flatShading: true,
         })
+        
         this.simple = new THREE.MeshPhongMaterial({
             color: 0x111111,
         })

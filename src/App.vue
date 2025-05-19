@@ -2,7 +2,7 @@
   import { reactive } from 'vue'
   import BoxControls   from './components/BoxControls.vue'
   import ThreeCanvas   from './components/ThreeCanvas.vue'
-  import { BOX_DATA } from './threeViewer/CONSTANTS/CONSTANTS'
+  import { BOX_DATA } from './CONSTANTS/CONSTANTS'
 
   const boxScheme = reactive({ ...BOX_DATA })
 </script>

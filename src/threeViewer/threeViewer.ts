@@ -3,8 +3,8 @@ import { Ticker } from './Ticker'
 import { LoadManager } from './LoadManager'
 import { MaterialsManager } from './MaterialsManager'
 import { Elem } from './elements/Elem'
-import { FacetNames } from './CONSTANTS/FASETS'
-import { BOX_DATA } from './CONSTANTS/CONSTANTS'
+import { FacetNames } from '../CONSTANTS/FASETS'
+import { BOX_DATA } from '../CONSTANTS/CONSTANTS'
 
 export type Root = {
     studio: Studio,

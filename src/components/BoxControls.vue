@@ -60,7 +60,7 @@
 
     <!-- Внутренние фаски -->
     <fieldset class="border p-3 rounded-lg">
-      <legend class="font-semibold mb-2">Внутренние фаски</legend>
+      <legend class="font-semibold mb-2">Фаски зеркала</legend>
 
       <ControlNumber v-model="scheme.facetInner.count"
                      label="Количество"

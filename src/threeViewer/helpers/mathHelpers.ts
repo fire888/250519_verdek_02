@@ -5,13 +5,9 @@ export type IV3 = [number, number, number]
 export type IV2 = [number, number]
 
 const {
-    //floor,
     random,
 } = Math
-//const ranN = (start, end) => start + floor(random() * (end - start))
 export const ran = (start: number, end: number) => start + random() * (end - start)
-
-
 
 export const createFace = (v1: IV3, v2: IV3, v3: IV3, v4: IV3) => [...v1, ...v2, ...v3, ...v1, ...v3, ...v4]
 export const createUv = (v1: IV2, v2: IV2, v3: IV2, v4: IV2) => [...v1, ...v2, ...v3, ...v1, ...v3, ...v4]
@@ -28,8 +24,6 @@ export const angleFromCoords = (x: number, y: number) => {
     x < 0 && y <= 0 && (rad = Math.PI + Math.abs(rad))
     return rad
 }
-
-
 
 export const createFaceWithSquare = (
     v1: IV3, 
@@ -108,15 +102,12 @@ export const createFaceWithSquare = (
         )
     ]
 
-
     return { 
         vArr,
         cArr,
         uArr,
     }
 }
-
-
 
 export const fillColorFaceWithSquare = (c1: IV3, c2: IV3) => [
     ...fillColorFace(c1),
@@ -125,8 +116,6 @@ export const fillColorFaceWithSquare = (c1: IV3, c2: IV3) => [
     ...fillColorFace(c2),
     ...fillColorFace(c2),
 ]
-
-
 
 export const transformArr = (arr: number[], x = 0, y = 0, z = 0, r = 0) => {
     let matrix = m4.yRotation(r);
@@ -172,7 +161,6 @@ export const rotateArrZ = (arr: number[], angle: number) => {
         arr[i + 2] = vector[2]
     }
 }
-
 
 export const translateArr = (arr: number[], x = 0, y = 0, z = 0) => {
     const matrix = m4.translation(x, y, z);

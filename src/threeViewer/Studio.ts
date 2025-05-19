@@ -26,14 +26,14 @@ export class Studio {
         const lightA = new THREE.AmbientLight(0xccccff, 30)
         this.scene.add( lightA )
     
-        const dirLight = new THREE.DirectionalLight( 0xffffaa, 50)
-        dirLight.position.set(-500, 1300, 700)
+        const dirLight = new THREE.DirectionalLight(0xffffaa, 70)
+        dirLight.position.set(500, 1000, 700)
         dirLight.castShadow = true
         dirLight.shadow.camera.top = 5000
         dirLight.shadow.camera.bottom = -5000
         dirLight.shadow.camera.left = -5000
         dirLight.shadow.camera.right = 5000
-        dirLight.shadow.camera.near = 1
+        dirLight.shadow.camera.near = .5
         dirLight.shadow.camera.far = 10000
         this.scene.add(dirLight)
     

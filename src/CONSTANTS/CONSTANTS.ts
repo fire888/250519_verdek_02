@@ -1,5 +1,5 @@
-import { FacetNames } from '../CONSTANTS/FASETS'
-import type { IDataBox } from '../threeViewer'
+import { FacetNames } from './FASETS'
+import type { IDataBox } from '../threeViewer/threeViewer'
 
 export const BOX_DATA: IDataBox = {
     currentBox: 3, 
@@ -19,6 +19,6 @@ export const BOX_DATA: IDataBox = {
         count: 3,
         rotationY: 0,
     },
-    doorRotation: 30,
+    doorRotation: 10,
 }
 
