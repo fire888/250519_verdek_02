@@ -10,6 +10,6 @@
 
 ```bash
 git clone https://github.com/fire888/250519_verdek_02.git
-cd 250517_verdek_02
+cd 250519_verdek_02
 npm i
 npm run dev
