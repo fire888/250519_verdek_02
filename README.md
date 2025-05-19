@@ -9,7 +9,7 @@
 **Требуемая версия Node.js:** v22.14.0
 
 ```bash
-git clone https://github.com/fire888/250517_verdek_02.git
+git clone https://github.com/fire888/250519_verdek_02.git
 cd 250517_verdek_02
 npm i
 npm run dev
