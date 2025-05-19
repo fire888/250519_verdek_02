@@ -23,7 +23,18 @@ export class ElementDoor {
     constructor(boxData: IDataBox, material: THREE.MeshPhongMaterial, material2: THREE.MeshPhongMaterial) {
 
         const { v, indInner, fullLen }  = this.createVerticies(boxData)
-        const uv = this.createUV(boxData, v)   
+        if (v.length < 2500) {
+            for (let i = 0; i < 2500 - v.length; ++i) {
+                v.push(0)
+            }
+        }
+        const uv = this.createUV(boxData, v) 
+        
+        if (uv.length < 2500) {
+            for (let i = 0; i < 2500 - uv.length; ++i) {
+                uv.push(0)
+            }
+        }
 
         const geometry = new THREE.BufferGeometry()
         const vF32 = new Float32Array(v)
@@ -96,6 +107,13 @@ export class ElementDoor {
             [s.wno[0], 0, s.wno[2]],
             [s.eno[0], 0, s.eno[2]],
         ))
+
+        console.log(v)
+        for (let i = 0; i < v.length; ++i) {
+            if (typeof v[i] !== 'number') {
+                console.log('!!!!!', v[i])
+            }
+        }
 
         const fullLen = v.length
 
