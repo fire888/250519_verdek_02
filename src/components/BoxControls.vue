@@ -71,6 +71,10 @@
                      label="Поворот&nbsp;Y"
                      :options="['0', '90']"/>
     </fieldset>
+    <fieldset> 
+        <legend class="font-semibold mb-2">Исходники</legend>
+        <a href="https://github.com/fire888/250519_verdek_02">ссылка на гитхаб</a>
+    </fieldset>
   </section>
 </template>
 
