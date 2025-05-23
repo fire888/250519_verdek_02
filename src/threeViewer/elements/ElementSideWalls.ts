@@ -2,16 +2,12 @@ import * as THREE from 'three'
 import type { IDataBox } from '../threeViewer'
 
 const createBoxGeometry = (params: IDataBox) => {
-    let v: number[] = []
-    let vG: number[] = []
+    const v: number[] = []
 
     const zBox = -300
     const tBox = 30        
     const w = params.w
     const h = params.d
-
-    v = []
-    // vG = []
 
     v.push(
         // left
@@ -78,26 +74,6 @@ const createBoxGeometry = (params: IDataBox) => {
         tBox, h - tBox, zBox + tBox, // 38
         w - tBox, h - tBox, zBox + tBox, // 39
     )
-
-    // vG.push(
-    //     0, 0, 0, // 38
-    //     0, h, 0, // 
-    //     w, h, 0,
-    //     w, 0, 0,
-    //     0, 0, 0,
-
-    //     0, 0, zBox,
-    //     0, h, zBox,
-    //     0, h, 0,
-    //     0, h, zBox,
-    //     w, h, zBox,
-    //     w, h, 0,
-    //     w, h, zBox,
-    //     w, 0, zBox,
-    //     w, 0, 0,
-    //     w, 0, zBox,
-    //     0, 0, zBox,
-    // )
 
     const i = []
     const uv = []
