@@ -24,6 +24,6 @@
 
   const model = computed({
     get: () => props.modelValue,
-    set: v  => emit('update:modelValue', Number(v))
+    set: v  => emit('update:modelValue', v)
   })
 </script>

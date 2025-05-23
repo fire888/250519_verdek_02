@@ -23,7 +23,7 @@ for (let i = 0; i < 5; ++i) {
             count: 3,
             rotationY: '0',
         },
-        doorRotation: '10',
+        doorRotation: 10,
     } 
     boxes.push(b)
 } 

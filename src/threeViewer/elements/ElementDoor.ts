@@ -23,16 +23,12 @@ export class ElementDoor {
     constructor(boxData: IDataBox, material: THREE.MeshPhongMaterial, material2: THREE.MeshPhongMaterial) {
 
         const { v, indInner, fullLen }  = this.createVerticies(boxData)
-        if (v.length < 2500) {
-            for (let i = 0; i < 2500 - v.length; ++i) {
-                v.push(0)
-            }
-        }
         const uv = this.createUV(boxData, v) 
-        
-        if (uv.length < 2500) {
-            for (let i = 0; i < 2500 - uv.length; ++i) {
-                uv.push(0)
+
+         if (v.length < 2500) {
+            for (let i = 0; i < Math.floor(2500 / 3) - v.length; ++i) {
+                v.push(0, 0, 0)
+                uv.push(0, 0)
             }
         }
 
@@ -52,14 +48,18 @@ export class ElementDoor {
         geometry.addGroup(indInner / 3, fullLen / 3, 1)
 
         this.mesh = new THREE.Mesh(geometry, [material, material2])
-        this.setRotation(boxData.doorRotation / 180 * Math.PI)
+        this.setRotation(+boxData.doorRotation / 180 * Math.PI)
         this.mesh.castShadow = true
     }
 
     redraw (newData: IDataBox) {
-        const { v, indInner, fullLen} = this.createVerticies(newData)
+        const { v, indInner, fullLen } = this.createVerticies(newData)
         for (let i = 0; i < this.mesh.geometry.attributes.position.array.length; ++i) {
-            this.mesh.geometry.attributes.position.array[i] = v[i]
+            if (v[i] !== undefined) {
+                this.mesh.geometry.attributes.position.array[i] = v[i]
+            } else {
+                this.mesh.geometry.attributes.position.array[i] = 0
+            }
         }
         this.mesh.geometry.attributes.position.needsUpdate = true
 
@@ -72,7 +72,7 @@ export class ElementDoor {
         this.mesh.geometry.rotateZ(-Math.PI)
 
         const uv = this.createUV(newData, v)
-        for (let i = 0; i < this.mesh.geometry.attributes.uv.array.length; ++i) {
+        for (let i = 0; i < uv.length; ++i) {
             this.mesh.geometry.attributes.uv.array[i] = uv[i]
         }
         this.mesh.geometry.attributes.uv.needsUpdate = true
@@ -81,15 +81,15 @@ export class ElementDoor {
     private createVerticies (boxData: IDataBox) {
         const v: number[] = []
         
-        // side profile
+        //side profile
         const s = createSide(boxData)
         v.push(...s.v)
         
-        // top profile
+        //top profile
         const t = createTopPr(boxData)
         v.push(...t.v)
 
-        // beetween inner outer
+        //beetween inner outer
         v.push(...createFace(s.wst, s.est, t.eso, t.wso))
         v.push(...createFace(s.wnt, s.wst, t.wso, t.wno))
         v.push(...createFace(t.eso, s.est, s.ent, t.eno))
@@ -100,7 +100,7 @@ export class ElementDoor {
         const i = createInner(boxData, t)
         v.push(...i.v)
 
-        // back 
+        // // back 
         v.push(...createFace(
             [s.eso[0], 0, s.eso[2]],
             [s.wso[0], 0, s.wso[2]],

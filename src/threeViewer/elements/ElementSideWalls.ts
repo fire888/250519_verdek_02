@@ -11,7 +11,7 @@ const createBoxGeometry = (params: IDataBox) => {
     const h = params.d
 
     v = []
-    vG = []
+    // vG = []
 
     v.push(
         // left
@@ -57,7 +57,7 @@ const createBoxGeometry = (params: IDataBox) => {
         // left
         tBox, tBox, 0,               // 24
         tBox, tBox, zBox + tBox,     // 25
-        tBox, h - tBox, zBox + tBox, // 126
+        tBox, h - tBox, zBox + tBox, // 26
         tBox, h - tBox, 0,           // 27
 
         // right
@@ -76,28 +76,28 @@ const createBoxGeometry = (params: IDataBox) => {
         w - tBox, h - tBox, 0,       // 36
         tBox, h - tBox, 0,           // 37
         tBox, h - tBox, zBox + tBox, // 38
-        w - tBox, h - tBox, zBox + tBox, // 37
+        w - tBox, h - tBox, zBox + tBox, // 39
     )
 
-    vG.push(
-        0, 0, 0,
-        0, h, 0,
-        w, h, 0,
-        w, 0, 0,
-        0, 0, 0,
+    // vG.push(
+    //     0, 0, 0, // 38
+    //     0, h, 0, // 
+    //     w, h, 0,
+    //     w, 0, 0,
+    //     0, 0, 0,
 
-        0, 0, zBox,
-        0, h, zBox,
-        0, h, 0,
-        0, h, zBox,
-        w, h, zBox,
-        w, h, 0,
-        w, h, zBox,
-        w, 0, zBox,
-        w, 0, 0,
-        w, 0, zBox,
-        0, 0, zBox,
-    )
+    //     0, 0, zBox,
+    //     0, h, zBox,
+    //     0, h, 0,
+    //     0, h, zBox,
+    //     w, h, zBox,
+    //     w, h, 0,
+    //     w, h, zBox,
+    //     w, 0, zBox,
+    //     w, 0, 0,
+    //     w, 0, zBox,
+    //     0, 0, zBox,
+    // )
 
     const i = []
     const uv = []

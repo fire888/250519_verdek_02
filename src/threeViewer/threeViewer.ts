@@ -22,7 +22,7 @@ export interface IDataBox {
     facetS: { type: FacetNames },
     facetT: { type: FacetNames, offsetX: number, offsetZ: number },
     facetInner: { type: FacetNames, count: number, rotationY: string },
-    doorRotation: string,
+    doorRotation: number,
 }
 
 let root: Root | null = null

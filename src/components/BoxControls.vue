@@ -69,7 +69,7 @@
 
       <ControlSelect v-model="storeBoxes.boxes[storeBoxes.currentBox].facetInner.rotationY"
                      label="Поворот&nbsp;Y"
-                     :options="['0','90']"/>
+                     :options="['0', '90']"/>
     </fieldset>
   </section>
 </template>

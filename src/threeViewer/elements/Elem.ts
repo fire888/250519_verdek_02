@@ -23,7 +23,7 @@ export class Elem {
     redraw (newData: IDataBox) {
         this.w = newData.w
         this.elementDoor.redraw(newData)
-        this.elementDoor.setRotation(newData.doorRotation / 180 * Math.PI)
+        this.elementDoor.setRotation(+newData.doorRotation / 180 * Math.PI)
         this.elementSideWalls.redraw(newData)
     }
 }
