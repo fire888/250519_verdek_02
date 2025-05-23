@@ -108,13 +108,6 @@ export class ElementDoor {
             [s.eno[0], 0, s.eno[2]],
         ))
 
-        console.log(v)
-        for (let i = 0; i < v.length; ++i) {
-            if (typeof v[i] !== 'number') {
-                console.log('!!!!!', v[i])
-            }
-        }
-
         const fullLen = v.length
 
         return { v, indInner, fullLen }

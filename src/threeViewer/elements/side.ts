@@ -1,6 +1,6 @@
 import { 
     FACETS,
-} from '../../CONSTANTS/FASETS'
+} from './FASETS'
 import { rotateArrY, translateArr } from '../helpers/mathHelpers'
 import type { IV3 } from '../helpers/mathHelpers'
 import type { IDataBox } from '../threeViewer'

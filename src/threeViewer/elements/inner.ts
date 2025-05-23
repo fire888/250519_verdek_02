@@ -1,5 +1,5 @@
 import { rotateArrY, translateArr, createFace } from "../helpers/mathHelpers"
-import { FacetNames, FACETS } from "../../CONSTANTS/FASETS"
+import { FacetNames, FACETS } from "./FASETS"
 import type { IDataTopProfile } from "./ElementDoor"
 import type { IDataBox } from "../threeViewer"
 

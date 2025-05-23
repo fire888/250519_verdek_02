@@ -3,8 +3,8 @@ import { Ticker } from './Ticker'
 import { LoadManager } from './LoadManager'
 import { MaterialsManager } from './MaterialsManager'
 import { Elem } from './elements/Elem'
-import { FacetNames } from '../CONSTANTS/FASETS'
-import { BOX_DATA } from '../CONSTANTS/CONSTANTS'
+import { FacetNames } from './elements/FASETS'
+import { storeBoxesData } from '../store/store'
 
 export type Root = {
     studio: Studio,
@@ -15,14 +15,14 @@ export type Root = {
 }
 
 export interface IDataBox {
-    currentBox: number
+    currentBox: string
     w: number,
     d: number,
     h: number,
     facetS: { type: FacetNames },
     facetT: { type: FacetNames, offsetX: number, offsetZ: number },
-    facetInner: { type: FacetNames, count: number, rotationY: number },
-    doorRotation: number,
+    facetInner: { type: FacetNames, count: number, rotationY: string },
+    doorRotation: string,
 }
 
 let root: Root | null = null
@@ -40,8 +40,8 @@ const createRoot = async (divWrapper: HTMLElement) => {
     const materialsManager = new MaterialsManager(loadManager.assets)
     
     const elems: Elem[] = []
-    for (let i = 0; i < 5; ++i) {
-        const elem = new Elem(BOX_DATA, materialsManager.wood, materialsManager.redMirrorr)
+    for (let i = 0; i < storeBoxesData.boxes.length; ++i) {
+        const elem = new Elem(storeBoxesData.boxes[+i], materialsManager.wood, materialsManager.redMirrorr)
         studio.add(elem.mesh)
         elem.mesh.position.x = -3000 + 1000 * i
         elems.push(elem) 
@@ -69,12 +69,12 @@ const createRoot = async (divWrapper: HTMLElement) => {
     }
 } 
 
-export const changeParams = (newData: IDataBox) => {
+export const changeParams = (index: number,newData: IDataBox) => {
     if (root === null || root.elems === undefined) {
         return
     }
     
-    root.elems[+newData.currentBox - 1].redraw(newData)
+    root.elems[index].redraw(newData)
 
     let fullW = 0
     for (let i = 0; i < root.elems.length; ++i) {

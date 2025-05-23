@@ -2,7 +2,7 @@
  *  Общие типы и хелперы      *
  *============================*/
 
-import type { IV2 } from '../threeViewer/helpers/mathHelpers'
+import type { IV2 } from '../helpers/mathHelpers'
 
 export enum FacetNames {
   FACET11 = 'FACET11',
