@@ -75,7 +75,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, reactive, watch } from 'vue';
+import { watch } from 'vue';
 import ControlSlider from './ControlSlider.vue'
 import ControlSelect from './ControlSelect.vue'
 import ControlNumber from './ControlNumber.vue'
