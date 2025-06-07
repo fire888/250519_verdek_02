@@ -10,5 +10,10 @@ import App from './App.vue'
 // import './leetCode06_phone.js'
 // import './leetCode07_sum.js'
 // import './leetCode08_node.js'
-import './leetCode09_summInd.js'
+//import './leetCode09_summInd.js'
+
+
+import './leetCode10_isValid.js'
+//import './typeScriptTeach'
+
 createApp(App).mount('#app')
